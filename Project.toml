@@ -1,4 +1,10 @@
 name = "BasePlateMesh"
 uuid = "d3430bf0-0225-451a-9ff4-b8bc4d43c133"
-authors = ["Cris Moen <cris.moen@runtosolve.com>"]
 version = "0.1.0"
+authors = ["Cris Moen <cris.moen@runtosolve.com>"]
+
+[deps]
+Gmsh = "705231aa-382f-11e9-3f0c-b7cb4346fdeb"
+
+[compat]
+Gmsh = "0.3.1"
