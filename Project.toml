@@ -1,0 +1,4 @@
+name = "BasePlateMesh"
+uuid = "d3430bf0-0225-451a-9ff4-b8bc4d43c133"
+authors = ["Cris Moen <cris.moen@runtosolve.com>"]
+version = "0.1.0"
