@@ -1,7 +1,8 @@
 module BasePlateMesh
 
 using Gmsh
-
+using Ferrite
+using FerriteGmsh
 
 plate_dimensions = (L=300.0, W=300.0, t=10.0)
 hole_dimensions = (hole_diameter=20.0, Sa1=0.0, Sa2=200.0) 
@@ -43,17 +44,29 @@ end
 
 
 
+mesh_size = 5.0
 
-# function mesh_base_plate
+function mesh_base_plate(mesh_size)
+    size = mesh_size
 
+    gmsh.option.setNumber("Mesh.CharacteristicLengthMin", size)
+    gmsh.option.setNumber("Mesh.CharacteristicLengthMax", size)
+    gmsh.option.setNumber("Mesh.RecombineAll", 0)
 
+    gmsh.model.mesh.generate(2)
+    gmsh.write("baseplate.msh")
+    gmsh.finalize()
 
-# end
+    grid = FerriteGmsh.togrid("baseplate.msh")
 
+    mesh_faces = []
+    for cell in grid.cells
+        nodes = collect(cell.nodes)
+        push!(mesh_faces, nodes)
+    end
 
+    return mesh_faces
 
-
-
-
+end
 
 end # module BasePlateMesh
