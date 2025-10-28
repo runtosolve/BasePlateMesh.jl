@@ -4,11 +4,7 @@ version = "0.1.0"
 authors = ["Cris Moen <cris.moen@runtosolve.com>"]
 
 [deps]
-Ferrite = "c061ca5d-56c9-439f-9c0e-210fe06d3992"
-FerriteGmsh = "4f95f4f8-b27c-4ae5-9a39-ea55e634e36b"
 Gmsh = "705231aa-382f-11e9-3f0c-b7cb4346fdeb"
 
 [compat]
-Ferrite = "1.1.0"
-FerriteGmsh = "1.2.1"
 Gmsh = "0.3.1"
